@@ -30,27 +30,7 @@ process.TFileService = cms.Service("TFileService",
 #It is another 'unlableable' variable
 process.source = cms.Source("PoolSource",
     fileNames = cms.untracked.vstring(
-#		"file:/storage0/data/mck4/HydJet_B0/step2_1.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_2.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_3.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_4.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_5.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_6.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_7.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_8.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_9.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_10.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_11.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_12.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_13.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_14.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_15.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_16.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_17.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_18.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_19.root",
-#		"file:/storage0/data/mck4/HydJet_B0/step2_20.root"
-															
+    															
 		"file:/storage1/users/mck4/HydJet_MinBias/step2_1.root",
 	)
 )
