@@ -7,7 +7,7 @@ if [ -z "$1" ]; then
 else
     NAME=$1
     BINARY_LOCATION=BinaryFiles/$NAME
-    DECODE_LOCATION=DecodedData/$NAME.root
+    DECODE_LOCATION=DecodedData/Decoded-$NAME.root
 
     if [ ! -d "./DecodedData" ]; then
         mkdir DecodedData
