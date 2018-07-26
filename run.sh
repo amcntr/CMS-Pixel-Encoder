@@ -1,54 +1,54 @@
 #!bin/bash
 
-NAME=$1
-BINARY_LOCATION=BinaryFiles/$NAME
-DECODE_LOCATION=DecodedData/$NAME.root
-
-if [ -z "$VAR" ]; then
+if [ -z "$1" ]; then
     echo
     echo Use: run.sh \<name\>
     echo
 else
-if [ ! -d "./DecodedData" ]; then
-    mkdir DecodedData
-fi
+    NAME=$1
+    BINARY_LOCATION=BinaryFiles/$NAME
+    DECODE_LOCATION=DecodedData/$NAME.root
 
-if [ ! -d "./$BINARY_LOCATION" ]; then
-    mkdir ./$BINARY_LOCATION
-fi
+    if [ ! -d "./DecodedData" ]; then
+        mkdir DecodedData
+    fi
 
-echo
-echo Pulling pixel data from source files.
-echo ================================================================
-echo
+    if [ ! -d "./$BINARY_LOCATION" ]; then
+        mkdir ./$BINARY_LOCATION
+    fi
 
-cd ./MCHitAnalyzer/python
+    echo
+    echo Pulling pixel data from source files.
+    echo ================================================================
+    echo
 
-cmsRun Sim-Out-Config.py
+    cd ./MCHitAnalyzer/python
 
-echo
-echo Moving Decoded Data into $DECODE_LOCATION 
-echo
+    cmsRun Sim-Out-Config.py
 
-mv decodedData.root ../../$DECODE_LOCATION
+    echo
+    echo Moving Decoded Data into $DECODE_LOCATION 
+    echo
 
-cd ../../
+    mv decodedData.root ../../$DECODE_LOCATION
 
-echo
-echo Converting pulled data to binary.
-echo ================================================================
-echo
+    cd ../../
 
-./PixelEncoder/PixelEncoder ./$DECODE_LOCATION
+    echo
+    echo Converting pulled data to binary.
+    echo ================================================================
+    echo
 
-for p in SRAMhit0.bin SRAMhit1.bin SRAMhit2.bin SRAMpix0.bin SRAMpix1.bin SRAMpix2.bin histogram_source.pdf histogram_binary.pdf;
-do
-    mv $p ./$BINARY_LOCATION/$p
-done
+    ./PixelEncoder/PixelEncoder ./$DECODE_LOCATION
 
-echo
-echo 
-echo Done converting data. Binary files are located in $BINARY_LOCATION
-echo ================================================================
-echo
+    for p in SRAMhit0.bin SRAMhit1.bin SRAMhit2.bin SRAMpix0.bin SRAMpix1.bin SRAMpix2.bin histogram_source.pdf histogram_binary.pdf;
+    do
+        mv $p ./$BINARY_LOCATION/$p
+    done
+
+    echo
+    echo 
+    echo Done converting data. Binary files are located in $BINARY_LOCATION
+    echo ================================================================
+    echo
 fi 
