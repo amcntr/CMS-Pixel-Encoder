@@ -18,6 +18,6 @@ This will first run cmsrun to pull the pixel hit data from the source, then Pixe
 
 The binary files will be stored in the BinaryFiles directory and the pixel hit data is stored in the ```DecodedData/<name of data>/``` directory.
 
-## Binary Files
+### Binary Files
 
 Details on the binary files can be found in the README.md inside the PixelEncoder directory.
