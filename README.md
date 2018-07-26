@@ -14,7 +14,7 @@ You then need to modify ```/MCHitAnalyzer/python/Sim-Out-Config.py``` ```line 31
 
 Run ```run.sh <name>``` or ```bash run.sh <name>```
 
-This will first run cmsrun to pull the pixel hit data from the source, then PixelEncoder to convert the pixel data into the binary files.
+This will first run cmsRun to pull the pixel hit data from the source, then PixelEncoder to convert the pixel data into the binary files.
 
 The binary files will be stored in the ```BinaryFiles/<name>/``` directory and the pixel hit data will be stored in the DecodedData directory.
 
