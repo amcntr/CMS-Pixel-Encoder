@@ -1,16 +1,14 @@
 ## CMS Pixel Encoder Package
 
-A set of programs that will convert CMS run data into a binary format for FED testing with a GLIB.
+A set of programs that will convert CMS Monte Carlo run data into a binary format for FED testing with a GLIB.
 
 ### Setup
 
 Runs on CMSSW_10_1_1. Untested on other versions of CMSSW.
 
-To compile the programs run ```compile.sh``` or ```bash compile.sh```
+To compile the the required code, run ```compile.sh``` or ```bash compile.sh```
 
-This will compile all the required code and setup a link to the proper config files.
-
-You then need to modify ```/MCHitAnalyzer/python/Sim-Out-Config.py``` line 31 to target the source data you want to convert.
+You then need to modify ```/MCHitAnalyzer/python/Sim-Out-Config.py``` ```line 31``` to target the run data you want to convert.
 
 ### How to run
 
