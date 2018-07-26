@@ -13,6 +13,10 @@ else
         mkdir DecodedData
     fi
 
+    if [ ! -d "./BinaryFiles" ]; then
+        mkdir BinaryFiles
+    fi
+
     if [ ! -d "./$BINARY_LOCATION" ]; then
         mkdir ./$BINARY_LOCATION
     fi
