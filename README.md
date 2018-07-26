@@ -4,6 +4,8 @@ A set of programs that will convert CMS run data into a binary format for FED te
 
 ### Setup
 
+Runs on CMSSW_10_1_1. Untested on other versions of CMSSW.
+
 To compile the programs run ```compile.sh``` or ```bash compile.sh```
 
 This will compile all the required code and setup a link to the proper config files.
