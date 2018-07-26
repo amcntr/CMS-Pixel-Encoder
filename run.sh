@@ -52,7 +52,7 @@ else
 
     echo
     echo 
-    echo Done converting data. Binary files are located in $BINARY_LOCATION
+    echo Done converting data. Binary files are located in ./$BINARY_LOCATION\/
     echo ================================================================
     echo
 fi 
