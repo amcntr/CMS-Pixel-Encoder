@@ -97,7 +97,7 @@ int Decoder::open(std::string filename, int chanBase) {
 
 void Decoder::graph(std::string path) {
     std::cout << "Highest hits in a channel: " << maxhits << '\n';
-    gStyle->SetPalette(62);
+    gStyle->SetPalette(55);
     TH2D* hFEDChan = new TH2D("Binary", "Hits per Channel in Binary Files;Channel;Number of Hits",
                          48, 1., 49., ((float)maxhits * 1.5),
                          -0.5, ((float)maxhits * 1.5) - 0.5);
