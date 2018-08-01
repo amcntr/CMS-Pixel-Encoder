@@ -17,7 +17,7 @@ public:
     int open(std::string file, int chanBase);
     int decodeRoc32(uint32_t line, int count);
     int decodeRoc64(uint64_t line, int count);
-    void process(std::string path);
+    void graph(std::string path);
 };
 
 #endif
