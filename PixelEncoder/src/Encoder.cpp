@@ -259,13 +259,14 @@ void Encoder::encode(int targetFED) {
 
 void Encoder::graph() {
     TCanvas* canvas = new TCanvas("canvas");
-    TH2D *hChanROC[48], *hFEDChan;
+    TH2D *hFEDChan;
     std::string title = "Hits Per Channel in FED #" + std::to_string(haFEDID) +
                       " in Each Channel;Channel;Number of Hits";
     std::string name = "hChanFED" + std::to_string(haFEDID);
+    gStyle->SetPalette(62);
     hFEDChan = new TH2D(name.c_str(), title.c_str(), 48, 1., 49.,
-                      ((float)hhChan + ((float)hhChan * 0.5)), -0.5,
-                      ((float)hhChan + ((float)hhChan * 0.5) - 0.5));
+                      ((float)hhChan * 1.5), -0.5,
+                      ((float)hhChan * 1.5) - 0.5);
     hFEDChan->SetOption("COLZ");
     int chanHits = 0;
     for (auto const& event : storage[haFEDID]) {
