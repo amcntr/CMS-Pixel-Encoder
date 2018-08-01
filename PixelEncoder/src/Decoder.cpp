@@ -2,7 +2,7 @@
 // Anthony McIntyre, July 2018
 // Decodes binary file to pixels for consistency checking
 
-#include "PixelDecoder.h"
+#include "Decoder.h"
 
 int Decoder::decodeRoc32(uint32_t line, int count) {
     int hits = 0;
