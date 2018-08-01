@@ -14,6 +14,8 @@
 
 #include <TCanvas.h>
 #include <TFile.h>
+#include <TStyle.h>
+#include <TColor.h>
 #include <TH2.h>
 #include <TH2D.h>
 #include <TPDF.h>
