@@ -45,7 +45,7 @@ int Decoder::open(std::string filename, int chanBase) {
         header = headerBuffer << (i * 2);
         header >>= (30);
         int chanID = chanBase + i;
-        std::cout << "Processing channel " << i << '\n';
+        std::cout << "Processing channel " << chanID << '\n';
         switch (header) {
             case 0:
                 for (int j = 0; j < blocksize / 4; j) {
