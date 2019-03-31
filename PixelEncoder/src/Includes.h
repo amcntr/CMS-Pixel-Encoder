@@ -21,6 +21,7 @@
 #include <TPDF.h>
 #include <TROOT.h>
 #include <TTree.h>
+#include <TLatex.h>
 #include <TTreeReader.h>
 #include <TTreeReaderValue.h>
 
