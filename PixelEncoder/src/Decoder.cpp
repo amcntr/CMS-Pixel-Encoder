@@ -110,6 +110,33 @@ void Decoder::graph(std::string path) {
     TCanvas* canvas = new TCanvas("canvas");
     hFEDChan->Draw();
     std::string filename = path + "histogram_binary.pdf";
+    
+    TString cmsText = "CMS";
+    int cmsTextFont = 61;
+    float cmsTextSize = 0.50;
+    TString extraText = "Preliminary";
+    int extraTextFont = 52;
+    float extraOverCmsTextSize  = 0.76;
+    float extraTextSize = extraOverCmsTextSize*cmsTextSize;
+    float H = pad->GetWh();
+    float W = pad->GetWw();
+    float l = pad->GetLeftMargin();
+    float t = pad->GetTopMargin();
+    float r = pad->GetRightMargin();
+    float b = pad->GetBottomMargin();
+    float relExtraDY = 3.5;
+    float align_ = 23.0;
+    float posX_ = 8.0;
+    float posY_ = 10.5;
+    TLatex latex;
+    latex.SetTextFont(cmsTextFont);
+    latex.SetTextSize(cmsTextSize*t);
+    latex.SetTextAlign(align_);
+    latex.DrawLatex(posX_, posY_, cmsText);
+    latex.SetTextFont(extraTextFont);
+    latex.SetTextAlign(align_);
+    latex.SetTextSize(extraTextSize*t);
+    latex.DrawLatex(posX_+1.8, posY_- relExtraDY*cmsTextSize*b, extraText);
     canvas->Print(filename.c_str());
 }
 
