@@ -126,8 +126,8 @@ void Decoder::graph(std::string path) {
     float b = canvas->GetBottomMargin();
     float relExtraDY = 3.5;
     float align_ = 23.0;
-    float posX_ = 8.0;
-    float posY_ = H - 10.5;
+    float posX_ = -2.0;
+    float posY_ = -20.0;
     TLatex latex;
     latex.SetTextFont(cmsTextFont);
     latex.SetTextSize(cmsTextSize*t);
@@ -136,7 +136,7 @@ void Decoder::graph(std::string path) {
     latex.SetTextFont(extraTextFont);
     latex.SetTextAlign(align_);
     latex.SetTextSize(extraTextSize*t);
-    latex.DrawLatex(posX_+2, posY_- relExtraDY*cmsTextSize*b, extraText);
+    latex.DrawLatex(posX_+6.0, posY_-4.5, extraText);
     
     canvas->Print(filename.c_str());
 }
