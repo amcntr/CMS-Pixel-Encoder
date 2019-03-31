@@ -282,6 +282,34 @@ void Encoder::graph() {
         }
     }
     hFEDChan->Draw();
-    title = "Title:Source - Hits per channel in FED #" + std::to_string(haFEDID);
+    title = "Title:Source - Hits per channel in FED #" + std::to_string(haFEDID);  
+  
+    TString cmsText = "CMS";
+    int cmsTextFont = 61;
+    float cmsTextSize = 0.50;
+    TString extraText = "Preliminary";
+    int extraTextFont = 52;
+    float extraOverCmsTextSize  = 0.76;
+    float extraTextSize = extraOverCmsTextSize*cmsTextSize;
+    float H = canvas->GetWh();
+    float W = canvas->GetWw();
+    float l = canvas->GetLeftMargin();
+    float t = canvas->GetTopMargin();
+    float r = canvas->GetRightMargin();
+    float b = canvas->GetBottomMargin();
+    float relExtraDY = 3.5;
+    float align_ = 23.0;
+    float posX_ = -2.0;
+    float posY_ = -20.0;
+    TLatex latex;
+    latex.SetTextFont(cmsTextFont);
+    latex.SetTextSize(cmsTextSize*t);
+    latex.SetTextAlign(align_);
+    latex.DrawLatex(posX_, posY_, cmsText);
+    latex.SetTextFont(extraTextFont);
+    latex.SetTextAlign(align_);
+    latex.SetTextSize(extraTextSize*t);
+    latex.DrawLatex(posX_+6.0, posY_-4.5, extraText);
+    
     canvas->Print("histogram_source.pdf", title.c_str());
 }
