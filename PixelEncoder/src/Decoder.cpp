@@ -118,12 +118,12 @@ void Decoder::graph(std::string path) {
     int extraTextFont = 52;
     float extraOverCmsTextSize  = 0.76;
     float extraTextSize = extraOverCmsTextSize*cmsTextSize;
-    float H = pad->GetWh();
-    float W = pad->GetWw();
-    float l = pad->GetLeftMargin();
-    float t = pad->GetTopMargin();
-    float r = pad->GetRightMargin();
-    float b = pad->GetBottomMargin();
+    float H = canvas->GetWh();
+    float W = canvas->GetWw();
+    float l = canvas->GetLeftMargin();
+    float t = canvas->GetTopMargin();
+    float r = canvas->GetRightMargin();
+    float b = canvas->GetBottomMargin();
     float relExtraDY = 3.5;
     float align_ = 23.0;
     float posX_ = 8.0;
@@ -137,6 +137,7 @@ void Decoder::graph(std::string path) {
     latex.SetTextAlign(align_);
     latex.SetTextSize(extraTextSize*t);
     latex.DrawLatex(posX_+1.8, posY_- relExtraDY*cmsTextSize*b, extraText);
+    
     canvas->Print(filename.c_str());
 }
 
